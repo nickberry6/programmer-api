@@ -14,4 +14,8 @@ class PostsController < ApplicationController
 
   def delete
   end
+
+  def post_params
+    params.require(:post).permit(:name)
+  end
 end

@@ -14,6 +14,9 @@ gem 'puma', '~> 3.0'
 # Mongoid as ORM
 gem 'mongoid', '~> 6.0.0'
 
+#paperclip for images
+gem 'paperclip', '~> 5.0.0'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
