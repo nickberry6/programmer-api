@@ -71,10 +71,13 @@ GEM
     mongoid (6.0.3)
       activemodel (~> 5.0)
       mongo (~> 2.3)
+    mongoid-paperclip (0.0.11)
+      mongoid
+      paperclip (>= 2.3.6, != 4.3.0)
     nio4r (1.2.1)
     nokogiri (1.7.0)
       mini_portile2 (~> 2.1.0)
-    paperclip (5.0.0)
+    paperclip (5.1.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
@@ -82,6 +85,7 @@ GEM
       mimemagic (~> 0.3.0)
     puma (3.6.2)
     rack (2.0.1)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.1)
@@ -138,8 +142,9 @@ DEPENDENCIES
   byebug
   listen (~> 3.0.5)
   mongoid (~> 6.0.0)
-  paperclip (~> 5.0.0)
+  mongoid-paperclip
   puma (~> 3.0)
+  rack-cors
   rails (~> 5.0.1)
   spring
   spring-watcher-listen (~> 2.0.0)

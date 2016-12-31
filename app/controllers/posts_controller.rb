@@ -1,12 +1,15 @@
 class PostsController < ApplicationController
   def index
-    render json: 'hello from index', status: 200
+    posts = Post.all
+    render json: posts, status: 200
   end
 
   def show
   end
 
   def create
+    post = Post.create(post_params)
+    render json: post, status: 201
   end
 
   def update
