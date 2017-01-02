@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    post = Post.find(post_params[:id])
+    render json: post, status: 200
   end
 
   def create
@@ -13,6 +15,9 @@ class PostsController < ApplicationController
   end
 
   def update
+    post = Post.find(post_params[:id])
+    post.update(post_params[:name])
+    render json: post, status: 201
   end
 
   def destroy
@@ -20,6 +25,8 @@ class PostsController < ApplicationController
     post.destroy
     render 'Successfully deleted post.', status: 200
   end
+
+  private
 
   def post_params
     params.permit(:name, :id)
