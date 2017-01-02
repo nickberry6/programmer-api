@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(post_params[:id])
-    post.update(post_params[:name])
+    post.update(post_params[:name, :description])
     render json: post, status: 201
   end
 
@@ -29,6 +29,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:name, :id)
+    params.permit(:name, :id, :description)
   end
 end
