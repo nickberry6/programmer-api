@@ -15,10 +15,13 @@ class PostsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    post = Post.find(post_params[:id])
+    post.destroy
+    render 'Successfully deleted post.', status: 200
   end
 
   def post_params
-    params.require(:post).permit(:name)
+    params.permit(:name, :id)
   end
 end
