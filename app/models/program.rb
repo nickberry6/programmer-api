@@ -5,6 +5,7 @@ class Program
 
   validates :name, presence: true
   validates :duration, presence: true
+  embeds_many :workout
 
   # validates :image, presence: true
 
@@ -14,4 +15,5 @@ class Program
   field :goal, type: String
   field :tags, type: Array
   field :duration, type: Integer
+  field :workouts, type: Array
 end

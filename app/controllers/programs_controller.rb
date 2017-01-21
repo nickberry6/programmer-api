@@ -16,7 +16,7 @@ class ProgramsController < ApplicationController
 
   def update
     program = Program.find(program_params[:id])
-    program.update(program_params[:name, :description])
+    program.update(program_params[:program].except(:id))
     render json: program, status: 201
   end
 
@@ -34,7 +34,7 @@ class ProgramsController < ApplicationController
     :name,
     :start_date,
     :end_date,
-    :program => [:name, :id, :goal, :keywords, :duration, :start_date, :end_date]
+    :program => [:name, :id, :goal, :keywords, :duration, :start_date, :end_date, tags: [:text]]
     )
   end
 end
